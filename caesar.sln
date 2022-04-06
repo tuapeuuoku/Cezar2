@@ -1,25 +1,19 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32112.339
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "caesar", "caesar\caesar.csproj", "{6B61C8E9-324C-4379-818F-66C21AA41FD8}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6B61C8E9-324C-4379-818F-66C21AA41FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B61C8E9-324C-4379-818F-66C21AA41FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B61C8E9-324C-4379-818F-66C21AA41FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B61C8E9-324C-4379-818F-66C21AA41FD8}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8AAED4CA-F498-432F-9A98-211B84967790}
-	EndGlobalSection
-EndGlobal
+Console.WriteLine("do zaszyfrowania");
+string a = Console.ReadLine();
+char[] achar = a.ToCharArray();
+int m;
+Console.WriteLine("klucz");
+m = Int32.Parse(Console.ReadLine());
+for (int e = 0; e < achar.Length; e++)
+{
+    achar[e] = (char)((achar[e] + m));
+    if (achar[e] > 90)
+    {
+        achar[e] = (char)((char)achar[e] - 26);
+    }
+
+}
+string b = new string(achar);
+Console.WriteLine("szyfrowana");
+Console.WriteLine(b);
